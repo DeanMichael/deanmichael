@@ -13,7 +13,7 @@ function updateParallax() {
         // Only apply parallax if section is in viewport
         if (rect.top < window.innerHeight && rect.bottom > 0) {
             const yPos = -(rect.top * speed);
-            section.style.backgroundPositionY = `${yPos}px`;
+            section.querySelector('::before')?.style.setProperty('transform', `translateY(${yPos}px)`);
         }
     });
     
