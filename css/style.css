@@ -43,9 +43,36 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 2.2rem;
+    font-weight: 400;
     color: #2c3e50;
+    font-family: 'Great Vibes', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0 10px;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2c3e50 20%, #2c3e50 80%, transparent);
+    transform: scaleX(0.8);
+    opacity: 0.3;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.logo:hover::after {
+    transform: scaleX(1);
+    opacity: 0.5;
 }
 
 .nav-links {
@@ -105,26 +132,20 @@ section {
     }
 }
 
-#home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/hero-bg.jpg');
+.content-section {
+    background: transparent;
 }
 
-#experience {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/experience-bg.jpg');
-}
-
-#interests {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/interests-bg.jpg');
-}
-
-#contact {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/contact-bg.jpg');
+#about {
+    background: #f8f9fa;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 /* Content Styling */
@@ -139,10 +160,6 @@ h2 {
     margin-bottom: 2rem;
     color: #2c3e50;
     text-align: center;
-}
-
-.content-section {
-    background: #fff;
 }
 
 /* About Section */
@@ -168,11 +185,10 @@ h2 {
 .interest-item {
     text-align: center;
     padding: 2rem;
-    background: #f8f9fa;
+    background: rgba(248, 249, 250, 0.9);
     border-radius: 10px;
     transition: transform 0.3s ease;
-    will-change: transform, opacity;
-    transform: translate3d(0, 0, 0);
+    backdrop-filter: blur(5px);
 }
 
 .interest-item:hover {
@@ -279,4 +295,25 @@ body {
     transform-style: preserve-3d;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+/* Content Styling */
+.parallax-section .container {
+    background: transparent;
+}
+
+#home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/hero-bg.jpg');
+}
+
+#experience {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/experience-bg.jpg');
+}
+
+#interests {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/interests-bg.jpg');
+}
+
+#contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/contact-bg.jpg');
 } 
