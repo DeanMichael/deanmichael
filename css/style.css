@@ -88,6 +88,16 @@ section {
     backface-visibility: hidden;
 }
 
+.parallax-section h1,
+.parallax-section h2,
+.parallax-section p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.parallax-section h1 {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
 @supports (-webkit-overflow-scrolling: touch) {
     .parallax-section {
         /* Disable fixed background attachment on iOS devices */
@@ -96,19 +106,19 @@ section {
 }
 
 #home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/hero-bg.jpg');
 }
 
 #experience {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/experience-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/experience-bg.jpg');
 }
 
 #interests {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/interests-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/interests-bg.jpg');
 }
 
 #contact {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/contact-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/contact-bg.jpg');
 }
 
 .container {
