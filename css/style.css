@@ -7,6 +7,8 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -14,6 +16,9 @@ body {
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-y: auto;
 }
 
 /* Navigation */
@@ -77,6 +82,17 @@ section {
     justify-content: center;
     color: white;
     text-align: center;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+    backface-visibility: hidden;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+    .parallax-section {
+        /* Disable fixed background attachment on iOS devices */
+        background-attachment: scroll;
+    }
 }
 
 #home {
@@ -145,6 +161,8 @@ h2 {
     background: #f8f9fa;
     border-radius: 10px;
     transition: transform 0.3s ease;
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0);
 }
 
 .interest-item:hover {
@@ -229,4 +247,26 @@ footer {
     .about-content {
         flex-direction: column;
     }
+}
+
+/* Optimize performance for elements that will be animated */
+.timeline-item,
+.fade-in {
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Add perspective to create depth */
+body {
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    overflow-y: auto;
 } 
