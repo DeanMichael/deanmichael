@@ -87,6 +87,10 @@ section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/experience-bg.jpg');
 }
 
+#interests {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/interests-bg.jpg');
+}
+
 #contact {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/contact-bg.jpg');
 }
