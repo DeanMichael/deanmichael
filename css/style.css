@@ -43,10 +43,10 @@ body {
 }
 
 .logo {
-    font-size: 2.2rem;
-    font-weight: 400;
+    font-size: 2.4rem;
+    font-weight: 600;
     color: #2c3e50;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Dancing Script', cursive;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     position: relative;
@@ -94,9 +94,19 @@ body {
 
 /* Sections */
 section {
-    min-height: 100vh;
-    padding: 6rem 2rem;
     position: relative;
+    padding: 6rem 2rem;
+}
+
+/* Make first section (home) full height */
+#home {
+    min-height: 100vh;
+}
+
+/* Other sections should fit content */
+#about, #experience, #interests, #contact {
+    min-height: auto;
+    padding: 4rem 2rem;
 }
 
 .parallax-section {
@@ -107,20 +117,28 @@ section {
     color: white;
     text-align: center;
     overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1px;
 }
 
 .parallax-section::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: -20%;  /* Extend beyond boundaries for smooth parallax */
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -20%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    transform: translateZ(-1px) scale(2);  /* Create parallax depth */
     z-index: -1;
+}
+
+.parallax-content {
+    transform: translateZ(0);  /* Place content in front */
+    position: relative;
+    z-index: 2;
 }
 
 .parallax-section h1,
@@ -135,8 +153,15 @@ section {
 
 @supports (-webkit-overflow-scrolling: touch) {
     .parallax-section::before {
-        /* Disable fixed background attachment on iOS devices */
+        /* Disable transform for iOS devices */
+        transform: none;
+        top: 0;
+        bottom: 0;
         background-attachment: scroll;
+    }
+    
+    .parallax-content {
+        transform: none;
     }
 }
 
@@ -153,7 +178,6 @@ section {
     margin: 0 auto;
     padding: 0 2rem;
     position: relative;
-    z-index: 2;
 }
 
 /* Content Styling */
@@ -174,8 +198,9 @@ h2 {
 .about-content {
     display: flex;
     gap: 2rem;
-    margin-top: 2rem;
+    margin: 2rem auto;
     text-align: center;
+    max-width: 800px;
 }
 
 .about-text {
@@ -196,7 +221,8 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    margin: 2rem auto;
+    max-width: 1000px;
 }
 
 .interest-item {
@@ -274,6 +300,19 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    section {
+        padding: 3rem 1.5rem;
+    }
+    
+    #home {
+        min-height: 100vh;
+    }
+    
+    .about-content,
+    .interests-grid {
+        margin: 1.5rem auto;
+    }
+
     .nav-content {
         flex-direction: column;
         gap: 1rem;
@@ -335,4 +374,15 @@ body {
 
 #contact::before {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/contact-bg.jpg');
+}
+
+/* Adjust spacing between sections */
+.content-section + .parallax-section,
+.parallax-section + .content-section {
+    margin-top: -2rem; /* Create slight overlap */
+}
+
+/* Ensure contact section has enough padding at bottom */
+#contact {
+    padding-bottom: 6rem;
 } 

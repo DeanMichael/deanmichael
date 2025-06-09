@@ -2,39 +2,37 @@
 let ticking = false;
 let lastScrollY = 0;
 
-// Parallax scrolling effect with performance optimization
-function updateParallax() {
-    const parallaxSections = document.querySelectorAll('.parallax-section');
+// Navbar transparency effect with performance optimization
+const navbar = document.querySelector('.navbar');
+let lastScroll = 0;
+
+function updateNavbar() {
+    const currentScroll = window.pageYOffset;
     
-    parallaxSections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        const speed = 0.5;
-        
-        // Only apply parallax if section is in viewport
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            const yPos = -(rect.top * speed);
-            section.querySelector('::before')?.style.setProperty('transform', `translateY(${yPos}px)`);
-        }
-    });
+    if (currentScroll <= 0) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+    } else if (currentScroll > lastScroll) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.8)';
+    } else {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+    }
     
-    ticking = false;
+    lastScroll = currentScroll;
 }
 
-// Throttled scroll handler
+// Throttled navbar update
+let navbarTicking = false;
 window.addEventListener('scroll', () => {
-    lastScrollY = window.scrollY;
-    
-    if (!ticking) {
+    if (!navbarTicking) {
         window.requestAnimationFrame(() => {
-            updateParallax();
-            ticking = false;
+            updateNavbar();
+            navbarTicking = false;
         });
-        
-        ticking = true;
+        navbarTicking = true;
     }
 });
 
-// Smooth scroll for navigation links with improved performance
+// Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -67,57 +65,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar transparency effect with performance optimization
-const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
-
-function updateNavbar() {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll <= 0) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-    } else if (currentScroll > lastScroll) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.8)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-    }
-    
-    lastScroll = currentScroll;
-}
-
-// Throttled navbar update
-let navbarTicking = false;
-window.addEventListener('scroll', () => {
-    if (!navbarTicking) {
-        window.requestAnimationFrame(() => {
-            updateNavbar();
-            navbarTicking = false;
-        });
-        navbarTicking = true;
-    }
-});
-
-// Add this CSS dynamically for smoother transitions
-const style = document.createElement('style');
-style.textContent = `
-    .parallax-section {
-        transform: translateZ(0);
-        backface-visibility: hidden;
-        will-change: transform;
-    }
-    
-    .navbar {
-        transform: translateZ(0);
-        will-change: background;
-        transition: background-color 0.3s ease;
-    }
-    
-    .fade-in {
-        animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-`;
-document.head.appendChild(style);
-
 // Add animation on scroll
 const observerOptions = {
     root: null,
@@ -139,7 +86,7 @@ document.querySelectorAll('.interest-item, .timeline-item').forEach(item => {
     observer.observe(item);
 });
 
-// Add this CSS to your style.css file
+// Add this CSS dynamically for smoother transitions
 const style = document.createElement('style');
 style.textContent = `
     .opacity-0 {
@@ -148,14 +95,7 @@ style.textContent = `
     }
     
     .fade-in {
-        animation: fadeIn 0.8s ease forwards;
-    }
-    
-    @keyframes fadeIn {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
 `;
 document.head.appendChild(style); 
