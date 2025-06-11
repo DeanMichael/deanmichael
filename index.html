@@ -4,95 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dean Michael Sibrizzi</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bonheur+Royale&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">Dean Michael Sibrizzi</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#interests">Interests</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand logo" href="#home">Dean Michael Sibrizzi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <section id="home" class="parallax-section">
-        <div class="parallax-content">
-            <div class="content">
-                <h1>Welcome to My World</h1>
-                <p>Software Developer | Creative Thinker | Problem Solver</p>
-                <div class="scroll-indicator">
-                    <i class="fas fa-chevron-down"></i>
+    <main>
+        <section id="home" class="parallax-section text-white text-center">
+            <div class="parallax-bg rellax" data-rellax-speed="-3" data-rellax-percentage="0.5" style="background-image: url('images/hero-bg.jpg');"></div>
+            <div class="section-content d-flex align-items-center justify-content-center min-vh-100">
+                <div class="container z-2">
+                    <h1>Mostly figuring it out<br>Occasionally nailing it</h1>
+                    <p class="lead">Sales Professional | Creative Thinker | Problem Solver</p>
+                    <a href="#about" class="scroll-indicator"><i class="fas fa-chevron-down"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="content-section">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm driven by curiosity and the urge to build. Whether it's a new idea, a tool, or a routine, I'm drawn to the process of exploring what's possible and pushing past what's comfortable. My background is in software sales and go-to-market strategy, but I'm always looking for ways to stretch into new spaces — especially where creativity and technology meet. I value simplicity, momentum, and doing meaningful work with people who care.</p>
+        <section id="about" class="parallax-section text-white text-center">
+            <div class="parallax-bg rellax" data-rellax-speed="-3" data-rellax-percentage="0.5" style="background-image: url('images/about-bg.jpg');"></div>
+            <div class="section-content d-flex align-items-center justify-content-center min-vh-100">
+                <div class="container z-2">
+                    <h2 class="mb-4">About Me</h2>
+                    <p class="lead">I'm a Sales Professional with a passion for technology and building relationships. With experience in both technical and non-technical roles, I bring a unique perspective to every interaction.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="experience" class="parallax-section">
-        <div class="parallax-content">
-            <div class="container">
-                <h2>Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Current Role</h3>
-                        <p>Description of your current position and responsibilities</p>
+        <section id="experience" class="parallax-section text-white text-center">
+            <div class="parallax-bg rellax" data-rellax-speed="-3" data-rellax-percentage="0.5" style="background-image: url('images/interests-bg.jpg');"></div>
+            <div class="section-content d-flex align-items-center justify-content-center min-vh-100">
+                <div class="container z-2">
+                    <h2 class="mb-4">Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h3>Current Role</h3>
+                            <p>Description of your current position and responsibilities.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="interests" class="parallax-section">
-        <div class="parallax-content">
-            <div class="container">
-                <h2>Interests & Skills</h2>
-                <div class="interests-grid">
-                    <div class="interest-item">
-                        <i class="fas fa-code"></i>
-                        <h3>Programming</h3>
-                        <p>Your favorite programming languages and technologies</p>
+        <section id="interests" class="parallax-section text-white text-center">
+            <div class="parallax-bg rellax" data-rellax-speed="-3" data-rellax-percentage="0.5" style="background-image: url('images/experience-bg.jpg');"></div>
+            <div class="section-content d-flex align-items-center justify-content-center min-vh-100">
+                <div class="container z-2">
+                    <h2 class="mb-5">Interests & Skills</h2>
+                    <div class="row gy-4 w-100 justify-content-center">
+                        <div class="col-md-4 text-center">
+                            <div class="interest-item p-4 bg-light bg-opacity-75 rounded-3">
+                                <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                                <h3>Programming</h3>
+                                <p>Your favorite programming languages and technologies.</p>
+                            </div>
+                        </div>
+                         <!-- Add more interests here -->
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="parallax-section">
-        <div class="parallax-content">
-            <div class="container">
-                <h2>Get in Touch</h2>
-                <div class="social-links">
-                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+        <section id="contact" class="parallax-section text-white text-center">
+            <div class="parallax-bg rellax" data-rellax-speed="-3" data-rellax-percentage="0.5" style="background-image: url('images/contact-bg.jpg');"></div>
+            <div class="section-content d-flex align-items-center justify-content-center min-vh-100">
+                <div class="container z-2">
+                     <h2 class="mb-4">Get in Touch</h2>
+                     <div class="social-links">
+                        <a href="https://github.com/yourusername" target="_blank" class="text-white mx-3"><i class="fab fa-github fa-3x"></i></a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank" class="text-white mx-3"><i class="fab fa-linkedin fa-3x"></i></a>
+                        <a href="mailto:your.email@example.com" class="text-white mx-3"><i class="fas fa-envelope fa-3x"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer>
+    <footer class="bg-dark text-white text-center py-4">
         <div class="container">
-            <p>&copy; 2025 Dean Michael Sibrizzi. All rights reserved.</p>
+            <p class="mb-0">&copy; 2025 Dean Michael Sibrizzi. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+    <script src="js/parallax-init.js"></script>
 </body>
 </html> 

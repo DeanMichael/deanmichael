@@ -1,3 +1,114 @@
+/* General Body & Typography */
+body {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Set up the 3D space for the parallax effect */
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+.logo {
+    font-family: 'Bonheur Royale', cursive;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+/* Navbar */
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+/* Parallax Sections */
+.parallax-section {
+    position: relative;
+    min-height: 60vw; /* fallback for browsers that don't support aspect-ratio */
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    aspect-ratio: 16 / 9;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Overlay for readability */
+.parallax-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.section-content, .parallax-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+h1, h2, h3, h4, h5, h6, p, .lead {
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.interest-item {
+    background: rgba(255,255,255,0.85) !important;
+    color: #222;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Remove the old overlay */
+.parallax-section::after {
+    content: none;
+}
+
+/* Content within parallax sections */
+.parallax-section .container {
+    position: relative;
+    z-index: 2;
+    /* Keep content on the base plane */
+    transform: translateZ(0); 
+}
+
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    top: 2rem;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    z-index: 3;
+    color: white;
+}
+
+.scroll-indicator i {
+    font-size: 2rem;
+}
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -7,12 +118,11 @@
 
 html {
     scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
@@ -25,32 +135,17 @@ body {
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    padding: 1rem 0;
-    backdrop-filter: blur(10px);
 }
 
 .nav-content {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
-}
-
-.logo {
-    font-size: 2.4rem;
-    font-weight: 600;
-    color: #2c3e50;
-    font-family: 'Dancing Script', cursive;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    position: relative;
-    padding: 0 10px;
+    padding: 0.5rem 2rem;
 }
 
 .logo::after {
@@ -95,155 +190,59 @@ body {
 /* Sections */
 section {
     position: relative;
-    padding: 6rem 2rem;
 }
 
-/* Make first section (home) full height */
-#home {
-    min-height: 100vh;
-}
-
-/* Other sections should fit content */
-#about, #experience, #interests, #contact {
-    min-height: auto;
-    padding: 4rem 2rem;
-}
-
-.parallax-section {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Paragraph text - UNIFORM STYLING FOR ALL SECTIONS */
+.parallax-section p {
     color: white;
-    text-align: center;
-    overflow: hidden;
-    transform-style: preserve-3d;
-    perspective: 1px;
-}
-
-.parallax-section::before {
-    content: '';
-    position: absolute;
-    top: -20%;  /* Extend beyond boundaries for smooth parallax */
-    left: 0;
-    right: 0;
-    bottom: -20%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    transform: translateZ(-1px) scale(2);  /* Create parallax depth */
-    z-index: -1;
-}
-
-.parallax-content {
-    transform: translateZ(0);  /* Place content in front */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     position: relative;
     z-index: 2;
 }
 
-.parallax-section h1,
-.parallax-section h2,
-.parallax-section p {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.parallax-section h1 {
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
-}
-
-@supports (-webkit-overflow-scrolling: touch) {
-    .parallax-section::before {
-        /* Disable transform for iOS devices */
-        transform: none;
-        top: 0;
-        bottom: 0;
-        background-attachment: scroll;
-    }
-    
-    .parallax-content {
-        transform: none;
-    }
-}
-
-.content-section {
-    background: transparent;
-}
-
-#about {
-    background: #f8f9fa;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-}
-
-/* Content Styling */
-h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #2c3e50;
-    text-align: center;
-}
-
-/* About Section */
-.about-content {
-    display: flex;
-    gap: 2rem;
-    margin: 2rem auto;
-    text-align: center;
-    max-width: 800px;
-}
-
-.about-text {
-    flex: 1;
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
+/* About section specific text styling */
+#about .about-text p {
+    font-size: 1.2rem;
     line-height: 1.8;
+    margin-bottom: 1.5rem;
 }
 
-/* Interests Grid */
-.interests-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem auto;
-    max-width: 1000px;
-}
-
+/* Interest items */
 .interest-item {
-    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
-    background: rgba(248, 249, 250, 0.9);
     border-radius: 10px;
-    transition: transform 0.3s ease;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.interest-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    color: #333;
 }
 
 .interest-item i {
     font-size: 2.5rem;
-    color: #3498db;
     margin-bottom: 1rem;
+    color: #3498db;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .nav-content {
+        padding: 0.5rem 1rem;
+    }
+    
+    .parallax-section .container {
+        padding: 1rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .interests-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .interest-item {
+        padding: 1rem;
+    }
 }
 
 /* Contact Section */
@@ -264,73 +263,12 @@ h2 {
     transform: scale(1.2);
 }
 
-/* Scroll Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 2s infinite;
-}
-
-.scroll-indicator i {
-    font-size: 2rem;
-    color: white;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
-}
-
 /* Footer */
 footer {
     background: #2c3e50;
     color: white;
     text-align: center;
     padding: 2rem 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    section {
-        padding: 3rem 1.5rem;
-    }
-    
-    #home {
-        min-height: 100vh;
-    }
-    
-    .about-content,
-    .interests-grid {
-        margin: 1.5rem auto;
-    }
-
-    .nav-content {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    .about-content {
-        flex-direction: column;
-    }
 }
 
 /* Optimize performance for elements that will be animated */
@@ -340,40 +278,9 @@ footer {
     transform: translate3d(0, 0, 0);
 }
 
-/* Smooth scrolling for the whole page */
-html {
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Add perspective to create depth */
-body {
-    perspective: 1px;
-    transform-style: preserve-3d;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
 /* Content Styling */
 .parallax-section .container {
     background: transparent;
-}
-
-#home::before {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/hero-bg.jpg');
-}
-
-#experience::before {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/experience-bg.jpg');
-}
-
-#interests::before {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/interests-bg.jpg');
-}
-
-#contact::before {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/contact-bg.jpg');
 }
 
 /* Adjust spacing between sections */
@@ -385,4 +292,4 @@ body {
 /* Ensure contact section has enough padding at bottom */
 #contact {
     padding-bottom: 6rem;
-} 
+}
