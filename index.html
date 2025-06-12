@@ -12,6 +12,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        #home .scroll-indicator {
+            position: absolute;
+            left: 50%;
+            bottom: 2rem;
+            transform: translateX(-50%);
+            z-index: 20;
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            pointer-events: auto;
+            background: none;
+        }
+        #home.parallax-section {
+            position: relative;
+            min-height: 100vh;
+            padding-top: 0; /* Remove any extra padding */
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
@@ -37,11 +56,11 @@
             <div class="parallax-bg rellax" data-rellax-speed="-3" data-rellax-percentage="0.5" style="background-image: url('images/hero-bg.jpg');"></div>
             <div class="section-content d-flex align-items-center justify-content-center min-vh-100">
                 <div class="container z-2">
-                    <h1>Mostly figuring it out<br>Occasionally nailing it</h1>
-                    <p class="lead">Sales Professional | Creative Thinker | Problem Solver</p>
-                    <a href="#about" class="scroll-indicator"><i class="fas fa-chevron-down"></i></a>
+                    <h1>Mostly figuring it out,<br>Occasionally nailing it.</h1>
+                    <p class="lead">Sales Professional | Acquisition Entrepreneur | Creative Generalist</p>
                 </div>
             </div>
+            <a href="#about" class="scroll-indicator"><i class="fas fa-chevron-down"></i></a>
         </section>
 
         <section id="about" class="parallax-section text-white text-center">
@@ -49,20 +68,126 @@
             <div class="section-content d-flex align-items-center justify-content-center min-vh-100">
                 <div class="container z-2">
                     <h2 class="mb-4">About Me</h2>
-                    <p class="lead">I'm a Sales Professional with a passion for technology and building relationships. With experience in both technical and non-technical roles, I bring a unique perspective to every interaction.</p>
+                    <p class="lead">I'm driven by curiosity and creativity, and learn best by doing. Whether it's a new idea, a tool, or a routine, I'm drawn to the process of exploring what's possible and iterating from there. My background is in software sales and go-to-market strategy, but I'm always looking for ways to explore new frontiers - especially where creativity and technology meet.</p>
                 </div>
             </div>
         </section>
 
         <section id="experience" class="parallax-section text-white text-center">
-            <div class="parallax-bg rellax" data-rellax-speed="-3" data-rellax-percentage="0.5" style="background-image: url('images/interests-bg.jpg');"></div>
+            <div class="parallax-bg rellax" data-rellax-speed="-3" data-rellax-percentage="0.5" style="background-image: url('images/experience-bg.jpg');"></div>
             <div class="section-content d-flex align-items-center justify-content-center min-vh-100">
                 <div class="container z-2">
                     <h2 class="mb-4">Experience</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h3>Current Role</h3>
-                            <p>Description of your current position and responsibilities.</p>
+                    <div id="experienceAccordion">
+                        <div class="row justify-content-center">
+                            <!-- Sales Career Column -->
+                            <div class="col-md-6 mb-4">
+                                <h3>Sales Career</h3>
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                    <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#salesCard1" style="cursor:pointer;">
+                                        GitHub
+                                    </div>
+                                    <div id="salesCard1" class="collapse" data-bs-parent="#experienceAccordion">
+                                        <div class="card-body text-white">
+                                            <p>Details about Sales Role 1...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                    <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#salesCard2" style="cursor:pointer;">
+                                        Nano Dimension
+                                    </div>
+                                    <div id="salesCard2" class="collapse" data-bs-parent="#experienceAccordion">
+                                        <div class="card-body text-white">
+                                            <p>Details about Sales Role 2...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                    <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#salesCard3" style="cursor:pointer;">
+                                        Cartesian RP
+                                    </div>
+                                    <div id="salesCard3" class="collapse" data-bs-parent="#experienceAccordion">
+                                        <div class="card-body text-white">
+                                            <p>Details about Sales Role 3...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                    <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#salesCard4" style="cursor:pointer;">
+                                        Make Playdate, Inc.
+                                    </div>
+                                    <div id="salesCard4" class="collapse" data-bs-parent="#experienceAccordion">
+                                        <div class="card-body text-white">
+                                            <p>Details about Sales Role 4...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                    <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#salesCard5" style="cursor:pointer;">
+                                        GoEngineer
+                                    </div>
+                                    <div id="salesCard5" class="collapse" data-bs-parent="#experienceAccordion">
+                                        <div class="card-body text-white">
+                                            <p>Details about Sales Role 5...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Acquisition Entrepreneurship Column -->
+                            <div class="col-md-6 mb-4">
+                                <h3>Acquisition Entrepreneurship</h3>
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                    <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#acqCard1" style="cursor:pointer;">
+                                        Acquisition Project 1
+                                    </div>
+                                    <div id="acqCard1" class="collapse" data-bs-parent="#experienceAccordion">
+                                        <div class="card-body text-white">
+                                            <p>Details about Acquisition Project 1...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                    <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#acqCard2" style="cursor:pointer;">
+                                        Acquisition Project 2
+                                    </div>
+                                    <div id="acqCard2" class="collapse" data-bs-parent="#experienceAccordion">
+                                        <div class="card-body text-white">
+                                            <p>Details about Acquisition Project 2...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                    <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#acqCard3" style="cursor:pointer;">
+                                        Acquisition Project 3
+                                    </div>
+                                    <div id="acqCard3" class="collapse" data-bs-parent="#experienceAccordion">
+                                        <div class="card-body text-white">
+                                            <p>Details about Acquisition Project 3...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                    <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#acqCard4" style="cursor:pointer;">
+                                        Acquisition Project 4
+                                    </div>
+                                    <div id="acqCard4" class="collapse" data-bs-parent="#experienceAccordion">
+                                        <div class="card-body text-white">
+                                            <p>Details about Acquisition Project 4...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                    <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#acqCard5" style="cursor:pointer;">
+                                        Acquisition Project 5
+                                    </div>
+                                    <div id="acqCard5" class="collapse" data-bs-parent="#experienceAccordion">
+                                        <div class="card-body text-white">
+                                            <p>Details about Acquisition Project 5...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,7 +195,7 @@
         </section>
 
         <section id="interests" class="parallax-section text-white text-center">
-            <div class="parallax-bg rellax" data-rellax-speed="-3" data-rellax-percentage="0.5" style="background-image: url('images/experience-bg.jpg');"></div>
+            <div class="parallax-bg rellax" data-rellax-speed="-3" data-rellax-percentage="0.5" style="background-image: url('images/interests-bg.jpg');"></div>
             <div class="section-content d-flex align-items-center justify-content-center min-vh-100">
                 <div class="container z-2">
                     <h2 class="mb-5">Interests & Skills</h2>
@@ -94,8 +219,8 @@
                 <div class="container z-2">
                      <h2 class="mb-4">Get in Touch</h2>
                      <div class="social-links">
-                        <a href="https://github.com/yourusername" target="_blank" class="text-white mx-3"><i class="fab fa-github fa-3x"></i></a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" class="text-white mx-3"><i class="fab fa-linkedin fa-3x"></i></a>
+                        <a href="https://github.com/deanmichael" target="_blank" class="text-white mx-3"><i class="fab fa-github fa-3x"></i></a>
+                        <a href="https://linkedin.com/in/dean-sibrizzi/" target="_blank" class="text-white mx-3"><i class="fab fa-linkedin fa-3x"></i></a>
                         <a href="mailto:your.email@example.com" class="text-white mx-3"><i class="fas fa-envelope fa-3x"></i></a>
                     </div>
                 </div>
@@ -103,9 +228,9 @@
         </section>
     </main>
 
-    <footer class="bg-dark text-white text-center py-4">
+    <footer class="bg-dark text-white text-center py-2">
         <div class="container">
-            <p class="mb-0">&copy; 2025 Dean Michael Sibrizzi. All rights reserved.</p>
+            <p class="mb-0">We the People</p>
         </div>
     </footer>
 
