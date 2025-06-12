@@ -252,6 +252,30 @@ section {
     .interest-item {
         padding: 1rem;
     }
+    .custom-blur-card {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .row.justify-content-center {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    .col-md-6.mb-4 {
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+    .parallax-section {
+        min-height: 60vh;
+    }
+    .parallax-bg {
+        background-size: cover !important;
+        background-position: center center !important;
+        width: 100vw !important;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 /* Contact Section */
