@@ -30,6 +30,32 @@
             min-height: 100vh;
             padding-top: 0; /* Remove any extra padding */
         }
+        @media (max-width: 768px) {
+            .custom-blur-card {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            .row.justify-content-center {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+            .col-md-6.mb-4 {
+                max-width: 100% !important;
+                flex: 0 0 100% !important;
+            }
+            .parallax-section {
+                min-height: 60vh;
+            }
+            .parallax-bg {
+                background-size: cover !important;
+                background-position: center center !important;
+                width: 100vw !important;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
     </style>
 </head>
 <body>
@@ -68,7 +94,7 @@
             <div class="section-content d-flex align-items-center justify-content-center min-vh-100">
                 <div class="container z-2">
                     <h2 class="mb-4">About Me</h2>
-                    <p class="lead">I'm driven by curiosity and creativity, and learn best by doing. Whether it's a new idea, a tool, or a routine, I'm drawn to the process of exploring what's possible and iterating from there. My background is in software sales and go-to-market strategy, but I'm always looking for ways to explore new frontiers - especially where creativity and technology meet.</p>
+                    <p class="lead">I'm driven by curiosity and creativity, and learn best by doing. Whether it's a new idea, a tool, or a routine, I'm drawn to the process of exploring what's possible and iterating from there. My background is in software sales and go-to-market strategy, but I'm always looking for ways to explore new frontiers.</p>
                 </div>
             </div>
         </section>
@@ -83,13 +109,14 @@
                             <!-- Sales Career Column -->
                             <div class="col-md-6 mb-4">
                                 <h3>Sales Career</h3>
+                                <p class="lead mb-4"> My sales career spans roughly 8 years, focused in the tech sector. Click on each to see core learnings <br> not found on my resume.</p>
                                 <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
                                     <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#salesCard1" style="cursor:pointer;">
                                         GitHub
                                     </div>
                                     <div id="salesCard1" class="collapse" data-bs-parent="#experienceAccordion">
                                         <div class="card-body text-white">
-                                            <p>Details about Sales Role 1...</p>
+                                            <p>After years of operating in startup environments, my core learning at GitHub was how to remain effective in a large team environment where more people, opinions, and process add significantly more complexity to even the simplest of projects.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +126,7 @@
                                     </div>
                                     <div id="salesCard2" class="collapse" data-bs-parent="#experienceAccordion">
                                         <div class="card-body text-white">
-                                            <p>Details about Sales Role 2...</p>
+                                            <p>At Nano, I learned how to balance selling 'the vision' vs. 'the now'. The tech was incredibly unique and ground-breaking, but their machine came at a very high cost and low rate of success, leaving me with a very small pool of early adopters.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -109,7 +136,7 @@
                                     </div>
                                     <div id="salesCard3" class="collapse" data-bs-parent="#experienceAccordion">
                                         <div class="card-body text-white">
-                                            <p>Details about Sales Role 3...</p>
+                                            <p>Cartesian was a small 3D print lab I co-founded with a couple friends. Here I learned the complexities of being an owner-operator of a small business, while also running a very resource constrained sales effort.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +146,7 @@
                                     </div>
                                     <div id="salesCard4" class="collapse" data-bs-parent="#experienceAccordion">
                                         <div class="card-body text-white">
-                                            <p>Details about Sales Role 4...</p>
+                                            <p>While being responsible for the growth of playdate, I learned the value of doing things that don't always scale early on, and extracting information from those activities that will ultimately drive efficiencies moving forward.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +156,7 @@
                                     </div>
                                     <div id="salesCard5" class="collapse" data-bs-parent="#experienceAccordion">
                                         <div class="card-body text-white">
-                                            <p>Details about Sales Role 5...</p>
+                                            <p>I was hired to create a new role for GoEngineer. Before I joined, they did not run any outbound sales efforts. Here I learned how to be creative in my approach to sales without any playbook, and systematizing what worked.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -137,53 +164,54 @@
                             <!-- Acquisition Entrepreneurship Column -->
                             <div class="col-md-6 mb-4">
                                 <h3>Acquisition Entrepreneurship</h3>
-                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                <p class="lead mb-4">Over the last couple years I taught myself how to navigate the world of SMB acquisitions. Below are 5 deals that I brought to contract, but never closed - click each to learn more.</p>
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 500px; min-height: 60px;">
                                     <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#acqCard1" style="cursor:pointer;">
-                                        Acquisition Project 1
+                                        $2.8M Offer: Marketing Attribution Co.
                                     </div>
                                     <div id="acqCard1" class="collapse" data-bs-parent="#experienceAccordion">
                                         <div class="card-body text-white">
-                                            <p>Details about Acquisition Project 1...</p>
+                                            <p>Revenue: $1.4M | SDE: $750K | Outcome: Outbid <br> High growth, high margin, but also high customer concentration. My offer was for 80% of the business, while the owner would retain 20%. He received multiple offers, some of which were more than double mine.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 500px; min-height: 60px;">
                                     <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#acqCard2" style="cursor:pointer;">
-                                        Acquisition Project 2
+                                        $1.3M Offer: Transmission Repair Shop
                                     </div>
                                     <div id="acqCard2" class="collapse" data-bs-parent="#experienceAccordion">
                                         <div class="card-body text-white">
-                                            <p>Details about Acquisition Project 2...</p>
+                                            <p>Revenue: $1.25M | SDE: $350K | Outcome: Seller withdrew <br> Long term successful shop, under a franchise label and the deal included real estate. Seller pulled out for family health reasons.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 500px; min-height: 60px;">
                                     <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#acqCard3" style="cursor:pointer;">
-                                        Acquisition Project 3
+                                        $730K Offer: Marketing SaaS Platform
                                     </div>
                                     <div id="acqCard3" class="collapse" data-bs-parent="#experienceAccordion">
                                         <div class="card-body text-white">
-                                            <p>Details about Acquisition Project 3...</p>
+                                            <p>Revenue: $575K | SDE: $225K | Outcome: Seller withdrew <br> This business offered compliance software for email marketers. During due diligence I found a very low usage rate of their product and hedged against that in the contract. Seller did not want to agree to the terms, signaling major risk to revenue.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 500px; min-height: 60px;">
                                     <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#acqCard4" style="cursor:pointer;">
-                                        Acquisition Project 4
+                                        $450K Offer: SaaS for Law Practices
                                     </div>
                                     <div id="acqCard4" class="collapse" data-bs-parent="#experienceAccordion">
                                         <div class="card-body text-white">
-                                            <p>Details about Acquisition Project 4...</p>
+                                            <p>Revenue: $375K | SDE: $280K | Outcome: Outbid <br> This business offered software to track timelines of cases, enabling attorneys to present more comprehensively in court. This was a great opportunity and I was pretty disappointed I was not able to compete with other bidders.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 450px; min-height: 60px;">
+                                <div class="card custom-blur-card mx-auto mb-3" style="max-width: 500px; min-height: 60px;">
                                     <div class="card-header text-white" data-bs-toggle="collapse" data-bs-target="#acqCard5" style="cursor:pointer;">
-                                        Acquisition Project 5
+                                        $140K Offer: Audio Visual Services Provider
                                     </div>
                                     <div id="acqCard5" class="collapse" data-bs-parent="#experienceAccordion">
                                         <div class="card-body text-white">
-                                            <p>Details about Acquisition Project 5...</p>
+                                            <p>Revenue: $315K | SDE: $120K | Outcome: Buyer withdrew <br> I like the AV industry, everything is pretty straightforward and it's fractured enough to pursue a consolidation play. This deal however, fell apart when the seller breached the terms of the LOI and withheld critical records.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -200,14 +228,7 @@
                 <div class="container z-2">
                     <h2 class="mb-5">Interests & Skills</h2>
                     <div class="row gy-4 w-100 justify-content-center">
-                        <div class="col-md-4 text-center">
-                            <div class="interest-item p-4 bg-light bg-opacity-75 rounded-3">
-                                <i class="fas fa-code fa-3x text-primary mb-3"></i>
-                                <h3>Programming</h3>
-                                <p>Your favorite programming languages and technologies.</p>
-                            </div>
-                        </div>
-                         <!-- Add more interests here -->
+                
                     </div>
                 </div>
             </div>
